@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application\IInputWordRepository.cs" />
+    <Compile Include="Combination.cs" />
     <Compile Include="Infrastructure\InputWordRepository.cs" />
     <Compile Include="Application\IResultPrinter.cs" />
     <Compile Include="Infrastructure\ResultPrinter.cs" />

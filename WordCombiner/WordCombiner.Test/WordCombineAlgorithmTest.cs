@@ -24,7 +24,7 @@ namespace WordCombiner.Test
         
         // assert
         Assert.AreEqual(1, result.Count());
-        Assert.AreEqual("foobar", result.Single());
+        Assert.AreEqual("foobar", result.Single().Combined);
       }
       
       [TestMethod]
@@ -37,7 +37,7 @@ namespace WordCombiner.Test
         
         // assert
         Assert.AreEqual(1, result.Count());
-        Assert.AreEqual("foobar", result.Single());
+        Assert.AreEqual("foobar", result.Single().Combined);
       }
 
       [TestMethod]
@@ -50,7 +50,7 @@ namespace WordCombiner.Test
         
         // assert
         Assert.AreEqual(1, result.Count());
-        Assert.AreEqual("foobar", result.Single());
+        Assert.AreEqual("foobar", result.Single().Combined);
       }
 
       [TestMethod]

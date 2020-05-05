@@ -3,6 +3,6 @@
 namespace WordCombiner.Application
 {
   public interface IResultPrinter {
-    void Print(IEnumerable<string> results);
+    void Print(IEnumerable<Combination> combinations);
   }
 }

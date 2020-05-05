@@ -6,12 +6,13 @@ namespace WordCombiner.Infrastructure
 {
   class ResultPrinter : IResultPrinter
   {
-    public void Print(IEnumerable<string> results) {
-      Console.WriteLine("--Results");
-      foreach (var result in results) {
-        Console.WriteLine(result);
+    public void Print(IEnumerable<Combination> combinations) {
+      Console.WriteLine("--Combinations");
+      foreach (var combination in combinations) {
+        var sumString = string.Join("+", combination.Words);
+        Console.WriteLine($"{sumString}={combination.Combined}");
       }
-      Console.WriteLine("--End of results");
+      Console.WriteLine("--End of combinations");
     }
   }
 }
