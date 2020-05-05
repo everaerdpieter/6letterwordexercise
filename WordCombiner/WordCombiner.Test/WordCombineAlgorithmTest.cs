@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace WordCombiner.Test
@@ -10,9 +6,50 @@ namespace WordCombiner.Test
     [TestClass]
     public class WordCombineAlgorithmTest
     {
-      [TestMethod]
-      public void Todo() {
-        throw new NotImplementedException();
+      private WordCombineAlgorithm _sut;
+
+      [TestInitialize]
+      public void TestIntialize() {
+        var combinationLength = 6;
+        _sut = new WordCombineAlgorithm(combinationLength);
       }
+
+      [TestMethod]
+      public void GivenOnly1ValidCombinationOf2Words_ItShouldReturnTheCombination() {
+        // arrange
+        var inputWords = new[] {"foo", "bar", "foobar"};
+
+        // act
+        var result = _sut.FindCombinations(inputWords);
+        
+        // assert
+        Assert.AreEqual(1, result.Count());
+        Assert.AreEqual("foobar", result.Single());
+      }
+
+      [TestMethod]
+      public void GivenNoValidCombinationOf2Words_ItShouldReturnNoCombination() {
+        // arrange
+        var inputWords = new[] {"foo", "xxx", "foobar"};
+
+        // act
+        var result = _sut.FindCombinations(inputWords);
+        
+        // assert
+        Assert.AreEqual(0, result.Count());
+      }
+
+      [TestMethod]
+      public void GivenACombinationOfTheWrongLength_ItShouldReturnNoCombination() {
+        // arrange
+        var inputWords = new[] {"foo", "ba", "fooba"};
+
+        // act
+        var result = _sut.FindCombinations(inputWords);
+        
+        // assert
+        Assert.AreEqual(0, result.Count());
+      }
+
     }
 }

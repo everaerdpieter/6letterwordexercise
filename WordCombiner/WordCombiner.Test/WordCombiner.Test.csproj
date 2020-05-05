@@ -45,5 +45,11 @@
     <Compile Include="WordCombineAlgorithmTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WordCombiner\WordCombiner.csproj">
+      <Project>{62e3e202-4a18-4c1b-a7b5-9e9cc4b27d57}</Project>
+      <Name>WordCombiner</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
