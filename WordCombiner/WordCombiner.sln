@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.136
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCombiner", "WordCombiner\WordCombiner.csproj", "{62E3E202-4A18-4C1B-A7B5-9E9CC4B27D57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordCombiner.Test", "WordCombiner.Test\WordCombiner.Test.csproj", "{3D93440B-A397-485E-A763-D0A9ACF02171}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62E3E202-4A18-4C1B-A7B5-9E9CC4B27D57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62E3E202-4A18-4C1B-A7B5-9E9CC4B27D57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62E3E202-4A18-4C1B-A7B5-9E9CC4B27D57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62E3E202-4A18-4C1B-A7B5-9E9CC4B27D57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D93440B-A397-485E-A763-D0A9ACF02171}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D93440B-A397-485E-A763-D0A9ACF02171}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D93440B-A397-485E-A763-D0A9ACF02171}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D93440B-A397-485E-A763-D0A9ACF02171}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {31652A24-5FE3-4E51-BCF5-9567E18743E3}
+	EndGlobalSection
+EndGlobal
