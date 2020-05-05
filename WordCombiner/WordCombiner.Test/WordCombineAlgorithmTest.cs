@@ -26,6 +26,32 @@ namespace WordCombiner.Test
         Assert.AreEqual(1, result.Count());
         Assert.AreEqual("foobar", result.Single());
       }
+      
+      [TestMethod]
+      public void GivenOnly1ValidCombinationOf3Words_ItShouldReturnTheCombination() {
+        // arrange
+        var inputWords = new[] {"ob", "fo", "ar", "foobar"};
+
+        // act
+        var result = _sut.FindCombinations(inputWords);
+        
+        // assert
+        Assert.AreEqual(1, result.Count());
+        Assert.AreEqual("foobar", result.Single());
+      }
+
+      [TestMethod]
+      public void GivenOnly1ValidCombinationOf6Words_ItShouldReturnTheCombination() {
+        // arrange
+        var inputWords = new[] {"f", "o", "o", "b", "a", "r", "foobar"};
+
+        // act
+        var result = _sut.FindCombinations(inputWords);
+        
+        // assert
+        Assert.AreEqual(1, result.Count());
+        Assert.AreEqual("foobar", result.Single());
+      }
 
       [TestMethod]
       public void GivenNoValidCombinationOf2Words_ItShouldReturnNoCombination() {
@@ -51,5 +77,16 @@ namespace WordCombiner.Test
         Assert.AreEqual(0, result.Count());
       }
 
+      [TestMethod]
+      public void GivenAPartialMatch_ItShouldReturnNoCombination() {
+        // arrange
+        var inputWords = new[] {"foo", "ba", "foobar"};
+
+        // act
+        var result = _sut.FindCombinations(inputWords);
+        
+        // assert
+        Assert.AreEqual(0, result.Count());
+      }
     }
 }
