@@ -43,6 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\IInputWordRepository.cs" />
+    <Compile Include="Infrastructure\InputWordRepository.cs" />
+    <Compile Include="Application\IResultPrinter.cs" />
+    <Compile Include="Infrastructure\ResultPrinter.cs" />
+    <Compile Include="Application\WordCombineHandler.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WordCombineAlgorithm.cs" />
@@ -50,5 +55,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
