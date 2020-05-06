@@ -34,10 +34,10 @@ namespace WordCombiner {
           partialMatch => inputWords.Select(inputWord => new Combination(partialMatch.Words.Concat(new[] {inputWord}))))
         .Distinct()
         .ToList();
-      var matchesAfterAdding1Word = combinationsWithOneWordExtra.Where(x => x.IsMatch(wordToMatch)).ToList();
+      var matchesAfterAddingOneWord = combinationsWithOneWordExtra.Where(x => x.IsMatch(wordToMatch)).ToList();
       var partialMatchesAfterAddingOneWord = combinationsWithOneWordExtra.Where(x => x.IsPartialMatch(wordToMatch)).ToList();
-      var matchesAfterAddingMoreThenOneWord = FindMatchesByAddingInputWords(wordToMatch, inputWords, partialMatchesAfterAddingOneWord);
-      return matchesAfterAdding1Word.Concat(matchesAfterAddingMoreThenOneWord).ToList();
+      var matchesAfterAddingMoreThanOneWord = FindMatchesByAddingInputWords(wordToMatch, inputWords, partialMatchesAfterAddingOneWord);
+      return matchesAfterAddingOneWord.Concat(matchesAfterAddingMoreThanOneWord).ToList();
     }
   }
 }
