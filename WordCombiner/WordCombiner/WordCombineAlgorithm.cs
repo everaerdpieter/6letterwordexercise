@@ -10,17 +10,16 @@ namespace WordCombiner {
     }
 
     public IEnumerable<Combination> FindCombinations(IEnumerable<string> inputWords) {
-      var wordsToMatch = inputWords.Where(x => x.Length == _combinationLength).Take(10).ToList();
+      var wordsToMatch = inputWords.Where(x => x.Length == _combinationLength).ToList();
       var wordsToCombine = inputWords.Where(x => x.Length < _combinationLength).ToList();
 
-      var combinations = new List<Combination>();
       foreach (var wordToMatch in wordsToMatch) {
         var partialMatchingCombinations = wordsToCombine.Select(x => new Combination(new[] {x})).Where(x => x.IsPartialMatch(wordToMatch)).ToList();
-        var matchingCombinationsForCurrentWordToMatch = FindMatchesByAddingInputWords(wordToMatch, inputWords, partialMatchingCombinations);
-        combinations.AddRange(matchingCombinationsForCurrentWordToMatch);
+        var matchingCombinations = FindMatchesByAddingInputWords(wordToMatch, inputWords, partialMatchingCombinations);
+        foreach (var matchingCombination in matchingCombinations) {
+          yield return matchingCombination;
+        }
       }
-
-      return combinations;
     }
 
     private IEnumerable<Combination> FindMatchesByAddingInputWords(
