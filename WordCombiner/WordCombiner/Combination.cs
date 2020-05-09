@@ -12,14 +12,6 @@ namespace WordCombiner
 
     public string Combined => Words.Aggregate((s1, s2) => s1 + s2);
 
-    public bool IsPartialMatch(string wordToMach) {
-      return wordToMach != Combined && wordToMach.StartsWith(Combined);
-    }
-
-    public bool IsMatch(string wordToMach) {
-      return wordToMach == Combined;
-    }
-
     protected bool Equals(Combination other)
     {
       return Equals(Words, other.Words);
